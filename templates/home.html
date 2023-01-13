@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1>{{ title }}</h1>
+    <table class="table table-hover table-bordered">
+        <thead class="bg-secondary text-white">
+          <tr>
+            <th>#</th>
+            <th>Time</th>
+            <th>Domain</th>
+            <th>IP Address</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for query in table %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ query.time }}</td>
+                    <td>{{ query.domain }}</td>
+                    <td>{{ query.ip }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
